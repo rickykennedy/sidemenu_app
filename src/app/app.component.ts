@@ -5,6 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Profile } from '../pages/profile/profile';
+import { Pokemon } from '../pages/pokemon/pokemon';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class MyApp {
       { title: 'Profile', component: Profile , icon:'contact'},
       { title: 'Page One', component: Page1 , icon:'archive'},
       { title: 'Page Two', component: Page2 ,icon:'send'},
+      { title: 'Pokemon', component: Pokemon ,icon:'send'},
     ];
 
   }
