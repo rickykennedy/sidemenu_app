@@ -4,7 +4,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import {AuthService} from '../../providers/authservice';
 import {Database} from '../../providers/database';
 import {Observable} from 'rxjs/Rx';
-
+import { Page1 } from '../page1/page1';
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',
@@ -12,7 +12,7 @@ import {Observable} from 'rxjs/Rx';
 })
 export class Profile {
 //   private observable: Observable;
-    private counter: any;
+    counter: any;
   constructor(public navCtrl: NavController, public authservice: AuthService, public alertCtrl: AlertController) {
     this.counter = 0;
   }
@@ -27,12 +27,25 @@ export class Profile {
                 Observable.interval(1000 * 10).subscribe(x => {
                     // this.presentAlert();
                     this.counter++;
-                    console.log("test " + this.counter);
+                    // console.log("test " + this.counter);
+                    this.print(this.counter);
+                    this.print2();
+
                 });
             }else{
                 console.log("failed");
             }
         });
+  }
+  print2() {
+      console.log("print2 " + this.counter);
+      if (this.counter == 5) {
+          this.navCtrl.setRoot(Page1);
+      }
+    }
+  print(counter) {
+      console.log("test " + counter);
+      
     }
     presentAlert() {
         this.authservice.test().then(data=>{
