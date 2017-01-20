@@ -1,6 +1,8 @@
 npm-debug.log
 www/build/main.js
 www/build/main.js.map
+www/build/main.css
+www/build/polyfills.js
 platforms/*
 .DS_Store
 .vscode/*
